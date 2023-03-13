@@ -9,7 +9,10 @@ def index():
 
 @app.route('/orders')
 def orders():
-    return render_template("html/orders.html")
+    pedidos = ["Combo 1, comanda 2","Executivo 2, comanda 3",
+                "Refri laranja, comanda 134","Cerveja, comanda 12",
+                "Batata Frita, comanda 14"]
+    return render_template("html/orders.html", orders = pedidos)
 
 if __name__ == '__main__':
     app.run(host='14.0.0.1', port="05", debug=True)

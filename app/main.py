@@ -15,5 +15,5 @@ def orders():
     return render_template("html/orders.html", orders = pedidos)
 
 if __name__ == '__main__':
-    app.run(host='14.0.0.1', port="05", debug=True)
+    app.run(host='127.0.0.1', port="05", debug=True)
 

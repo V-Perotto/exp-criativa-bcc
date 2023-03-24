@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block content %}
+    <h2>Meus Pedidos</h2>
+    <ul>
+        {% for item in orders_list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <p>Voltar para <a href="/">página inicial</a>!</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Meu Restaurante</title>
+    </head>
+
+    <body>
+        <h2>Meus Pedidos</h2>
+        <ul>
+            {% for item in  orders_list%}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+        <p>Voltar para <a href="/">página inicial</a>!</p>
+    </body>
+</html>

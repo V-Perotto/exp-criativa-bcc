@@ -1,0 +1,62 @@
+{% block um_exemplo04 %}
+<div class="resume-section-content">
+    <h2 class="mb-0">Exemplo 04</h2>
+    <div class="subheading mb-3">Módulo 1</div>
+    <div>
+        <div>
+            <div class="mb-3">1. Arquivo <code>index.html</code>.</div>
+            <img class="mb-3" width="500px" src="{{ url_for('static', filename='assets/img/modulo01/exemplo04/1.png') }}" />    
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Globalizando as variáveis <code>hrefs</code> e <code>descriptions</code> criadas no <a href="#um_exemplo03">Exemplo 03</a>.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">2. Arquivo <code>index.html</code>.</div>
+            <img class="mb-3"  width="45%" src="{{ url_for('static', filename='assets/img/modulo01/exemplo04/2.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li class="mb-2">
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Criando um bloco de conteúdo chamado <code>content</code>;
+                </li>
+                <li class="mb-2">
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Extendendo esse bloco para o arquivo <code>template.html</code>.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">3. Arquivo <code>template.html</code>.</div>
+            <img class="mb-3"  width="40%" src="{{ url_for('static', filename='assets/img/modulo01/exemplo04/3.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Adicionado o bloco de conteúdo na página HTML de <code>template.html</code>.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <ul class="fa-ul mb-0 list-inline d-flex flex-column flex-md-row justify-content-between mb-5">
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#um_exemplo03">
+                    <span class="fa-li"><i class="fas fa-angle-up"></i></span>
+                    Voltar
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#modulo_dois">
+                    Próximo
+                    <span class="fa-li"><i class="fas fa-angle-down"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

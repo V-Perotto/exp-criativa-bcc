@@ -1,0 +1,46 @@
+{% block um_exemplo00 %}
+<div class="resume-section-content">
+    <h2 class="mb-0">Exemplo 00</h2>
+    <div class="subheading mb-3">Módulo 1</div>
+    <div class="mb-3">1. Arquivo <code>app.py</code>.</div>
+    <div class="mb-3">
+        <img width="400px" src="{{ url_for('static', filename='assets/img/modulo01/exemplo00/0.png') }}" />
+    </div>
+    <div class="subheading mb-3">O que foi feito?</div>
+    <ul class="fa-ul mb-0">
+        <li>
+            <span class="fa-li"><i class="fas fa-code"></i></span>
+            Instalado e importado a biblioteca Flask.
+        </li>
+        <li>
+            <span class="fa-li"><i class="fas fa-code"></i></span>
+            Realizada uma instância da classe Flask, passando como argumento o nome do arquivo.
+        </li>
+        <li>
+            <span class="fa-li"><i class="fas fa-code"></i></span>
+            Criada uma rota para acessar a página index com retorno de <code>String</code>.
+        </li>
+        <li>
+            <span class="fa-li"><i class="fas fa-code"></i></span>
+            Verifica se o script atual está sendo executado como programa principal. Passando um host e porta diferentes do padrão.
+        </li>
+    </ul>
+    <hr>
+    <div>
+        <ul class="fa-ul mb-0 list-inline d-flex flex-column flex-md-row justify-content-between mb-5">
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#modulo_um">
+                    <span class="fa-li"><i class="fas fa-angle-up"></i></span>
+                    Voltar
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#um_exemplo01">
+                    Próximo
+                    <span class="fa-li"><i class="fas fa-angle-down"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

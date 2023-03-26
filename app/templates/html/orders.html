@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block login %}
+    <h1>Pedidos</h1>
+        <ul>
+            {% if orders|length > 0 %}
+            {% for order in orders %}
+            <li>{{ orders[order] }}</li>
+            {% endfor %}
+            {% else %}
+            <li>Ainda não existem pedidos registrados!</li>
+            {% endif %}
+        </ul>
+    <p>Voltar para <a href="/">página inicial</a>!</p>
+{% endblock %}

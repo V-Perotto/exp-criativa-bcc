@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block login %}
-    <form action="/orders" method="POST">
-        <p>Registrar Produto:</p>
-        <p><input type="text" name="name" placeholder="Nome"/></p>
-        <p><input type="text" name="ticket" placeholder="ID Comanda"/></p>
-        <p><button type="submit">Enviar</button></p>
-    </form>
-{% endblock %}

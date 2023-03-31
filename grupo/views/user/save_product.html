@@ -1,0 +1,15 @@
+{% block save_product %}
+<div class="mb-5 d-flex align-items-center justify-content-center">
+    <p>Voltar para <a href="/">página inicial</a>!</p>
+</div>
+<div class="mb-3 d-flex align-items-center justify-content-center">
+    <h2>Meus Produtos</h2>
+</div>
+<div id="registered_users" class="mb-5 d-flex align-items-center justify-content-center">
+    <ul>
+        {% for item in registered_users %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

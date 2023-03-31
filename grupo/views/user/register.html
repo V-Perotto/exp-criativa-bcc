@@ -1,0 +1,36 @@
+<html>
+    <head>
+        {% include "user/basic/user_register.html" %}
+        {% include "content/link.html" %}
+    </head>
+    <body>
+        {% include "content/basic/header.html" %}
+        <div class="mb-3 d-flex align-items-center justify-content-center">
+            <img src="static/img/170781.png" width="80" height="80" alt="">
+        </div>
+        <div class="mb-4 d-flex align-items-center justify-content-center">
+            <h2>Acesse sua conta</h2>
+        </div> 
+        <div class="card d-flex align-items-center justify-content-center" style="margin-right: 38rem; margin-left: 38rem; padding-top: 2rem;">
+            <div id="form" class="mb-1 d-flex align-items-center justify-content-center">
+                <form action="/user/save_register" method="POST">
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserName" name="user_name" placeholder="Nome">
+                    </p>  
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserSurname" name="user_surname" placeholder="Sobrenome">
+                    </p>
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserEmail" name="user_email" placeholder="Email">
+                    </p>
+                    <p class="mb-3">
+                        <input class="form-control" type="password" id="idUserPassword" name="user_pwd" placeholder="Senha">
+                    </p>
+                    <p class="mb-4" style="margin-right: 75px; margin-left: 75px;">
+                        <input class="btn btn-success" type="submit" value="Registrar">        
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html

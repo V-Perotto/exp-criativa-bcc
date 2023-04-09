@@ -1,5 +1,6 @@
 # TO DO
 from flask import Blueprint, render_template, redirect, url_for, request
+from models.auth import getUser, list_board_sensor
 
 iot = Blueprint("IoT", __name__, template_folder='./views/', static_folder='./static/', root_path="./")
 
@@ -10,7 +11,12 @@ descriptions = ["Registrar Sensor"]
 
 @iot.route('/')
 def index():
-    return render_template('/iot/index.html', hrefs=hrefs, descriptions=descriptions)
+    return render_template('/iot/index.html', 
+                           user=getUser(), 
+                           iot_list_board=list_board_sensor(), 
+                           hrefs=hrefs, 
+                           descriptions=descriptions
+                           )
 
 @iot.route('/save_board', methods=['POST', 'GET'])
 def save_register():

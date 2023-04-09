@@ -1,0 +1,49 @@
+{% block iot_list_board %}
+{% include "content/back_link.html" %}
+<div class="mb-5 d-flex align-items-center justify-content-center">
+    <h1 class="d-flex align-items-center justify-content-center">
+        Lista de Placas
+    </h1>
+</div>
+<div class="mb-3 d-flex align-items-center justify-content-center">
+    <ul class="navbar-nav">
+    {% for board_sensor in iot_list_board %}
+        <li class="mb-3 nav-item">    
+            <div class="mb-3 d-flex align-items-center justify-content-center">
+                <ul class="list-group list-group-horizontal">
+                    {% if board_sensor['status'] == True %}
+                        <li class="list-group-item list-group-item-success">Ativada</li>
+                    {% else %}
+                        <li class="list-group-item list-group-item-danger">Desativada</li>
+                    {% endif %}
+                    <li class="list-group-item">{{ board_sensor['name'] }}</li>
+                    <li class="list-group-item">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-dark">
+                                <input type="radio" name="options" id="detalhes">Detalhes
+                            </label>
+                            <label class="btn btn-danger">
+                                <input type="radio" name="options" id="excluir">Excluir
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+    <nav aria-label="Lista de dados">
+        <ul class="d-flex pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}

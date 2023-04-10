@@ -1,0 +1,28 @@
+{% block admin_users %}
+<div class="d-flex align-items-center justify-content-center">
+    <h1 class="mb-5">
+        Usuários
+    </h1>
+</div>
+<div class="m-4 d-flex align-items-center justify-content-center">
+    <h2>
+        Crie, edite ou exclua um usuário 
+    </h2>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+    <ul class="no-dots">
+        <li class="mb-3 d-flex align-items-center justify-content-center">
+            <a class="btn btn-outline-success" href="Users/Register">
+                <i class="fa fa-plus" style="margin-right: 2px;"></i>
+                Criar Usuários
+            </a>
+        </li>
+        <li class="d-flex align-items-center justify-content-center">
+            <a class="btn btn-outline-secondary" href="Users/list_of_boards">
+                <i class="fa fa-list" style="margin-right: 2px;"></i>
+                Visualizar Usuários
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Admin - Cadastrar Usuário</title>
+        {% include "content/link.html" %}
+    </head>
+    <body>
+        {% include "content/header.html" %}
+        {% include "content/img_logo.html" %}
+        <div class="mb-4 d-flex align-items-center justify-content-center">
+            <h2>Criar um usuário</h2>
+        </div> 
+        <div class="card d-flex align-items-center justify-content-center" style="margin-right: 38rem; margin-left: 38rem; padding-top: 2rem;">
+            <div id="form" class="mb-1 d-flex align-items-center justify-content-center">
+                <form action="/admin/create_user" method="POST">
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserName" name="user_name" placeholder="Nome">
+                    </p>  
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserSurname" name="user_surname" placeholder="Sobrenome">
+                    </p>
+                    <p class="mb-3">
+                        <input class="form-control" type="text" id="idUserEmail" name="user_email" placeholder="Email">
+                    </p>
+                    <p class="mb-3">
+                        <input class="form-control" type="password" id="idUserPassword" name="user_password" placeholder="Senha">
+                    </p>
+                    <p class="mb-3">
+                        <fieldset>
+                            <div class="checkbox">
+                                <input checked style="margin-right: 0px;" class="form-control" type="checkbox" id="idIsAdmin" name="user_is_admin">
+                                <label class="d-flex align-items-center justify-content-center" for="idIsAdmin">Admin</label> 
+                            </div>
+                        </fieldset>
+                    </p>
+                    <p class="mb-4 d-flex align-items-center justify-content-center">
+                        <a class="btn btn-success" type="submit" href="/admin/Users">
+                            <i class="fas fa-plus-circle"></i>
+                            Criar        
+                        </a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+    {% include "content/scripts.html" %}
+</html

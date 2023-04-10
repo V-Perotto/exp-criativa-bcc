@@ -4,14 +4,9 @@ from models.auth import getUser
 
 login = Blueprint("login", __name__, template_folder='./views/', static_folder='./static/', root_path="./")
 
-registered_logins = []
-
-hrefs = ["/login/login"]
-descriptions = ["Realizar Login"]
-
 @login.route('/')
 def login_index():
     return render_template('/login/index.html', 
-                           user=getUser(), 
-                           hrefs=hrefs, 
-                           descriptions=descriptions)
+                           user=getUser()
+                            
+                          )

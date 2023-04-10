@@ -4,18 +4,11 @@ from models.auth import getUser, list_board_sensor
 
 iot = Blueprint("IoT", __name__, template_folder='./views/', static_folder='./static/', root_path="./")
 
-registered_iots = []
-
-hrefs = ["/IoT/register"]
-descriptions = ["Registrar Sensor"]
-
 @iot.route('/')
 def index():
     return render_template('/iot/index.html', 
                            user=getUser(), 
-                           iot_list_board=list_board_sensor(), 
-                           hrefs=hrefs, 
-                           descriptions=descriptions
+                           iot_list_board=list_board_sensor()
                            )
 
 @iot.route('/save_board', methods=['POST', 'GET'])

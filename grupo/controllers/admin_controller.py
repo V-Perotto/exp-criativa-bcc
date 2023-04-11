@@ -1,6 +1,6 @@
 # TO DO
 from flask import Blueprint, render_template, redirect, url_for, request
-from models.auth import getUser, registerUser
+from models.auth import getUser, registerUser, db_users
 
 admin = Blueprint("admin", __name__, template_folder='./views/', static_folder='./static/', root_path="./")
 
@@ -19,7 +19,8 @@ def register_users():
 @admin.route("/Users/UsersList")
 def user_list():
     return render_template("/admin/Users/list_of_users.html",
-                           user=getUser())
+                           user=getUser(),
+                           db_users=db_users)
 
 @admin.route('/Users/create_user', methods=['POST', 'GET']) 
 def create_user():

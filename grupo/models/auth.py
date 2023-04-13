@@ -52,24 +52,37 @@ def createSensor(dict_sensor, board_id):
 def getUser():
     test = {
         "username": "Nome do User",
-        "is_admin": True,
+        "is_admin": False,
         "is_logged": True
     }
     return test
 
-def list_board_sensor():
-    list_of_boards = []
-    dict_board_sensor = {
+def showBoards():
+    dict_board_board = {
         'name':'ESP-32',
         'status':True
     }
-    dict_board_sensor2 = {
+    dict_board_board2 = {
         'name':'ESP-32 - 2',
         'status':False
     }
-    list_of_boards.append(dict_board_sensor)
-    list_of_boards.append(dict_board_sensor2)
-    return list_of_boards
+    db_board.append(dict_board_board)
+    db_board.append(dict_board_board2)
+    return db_board
+
+def showSensors():
+    db_board = showBoards()
+    dict_board_sensor = {
+        'name': 'Sensor de Gás',
+        'status':True
+    }
+    dict_board_sensor2 = {
+        'name':'Sensor de Qualidade do Ar',
+        'status': False
+    }
+    db_board[0]['sensors'] = [dict_board_sensor] 
+    db_board[1]['sensors'] = [dict_board_sensor2] 
+    return db_board
 
 def createUser(dict_user):
     """dict_user"""

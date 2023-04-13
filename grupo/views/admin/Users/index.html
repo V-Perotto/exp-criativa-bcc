@@ -5,7 +5,11 @@
     </head>
     <body>
         {% include "content/header.html" %}
+        {% if user['is_admin'] %}
         {% include "admin/Users/users.html" %}
+        {% else %}
+        {% include "error/404/template.html" %}
+        {% endif %}
     </body>
     {% include "content/scripts.html" %}
 </html>

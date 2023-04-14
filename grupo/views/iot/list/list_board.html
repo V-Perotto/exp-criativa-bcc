@@ -7,30 +7,46 @@
 </div>
 <div class="mb-3 d-flex align-items-center justify-content-center">
     <ul class="navbar-nav">
-    {% for boards in db_board %}
-        <li class="mb-3 nav-item">    
-            <div class="mb-3 d-flex align-items-center justify-content-center">
-                <ul class="list-group list-group-horizontal">
-                    {% if boards['status'] == True %}
-                        <li class="list-group-item list-group-item-success">Ativada</li>
-                    {% else %}
-                        <li class="list-group-item list-group-item-danger">Desativada</li>
-                    {% endif %}
-                    <li class="list-group-item">{{ boards['name'] }}</li>
-                    <li class="list-group-item">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-dark">
-                                <input type="radio" name="options" id="detalhes">Detalhes
-                            </label>
-                            <label class="btn btn-danger">
-                                <input type="radio" name="options" id="excluir">Excluir
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </li>
-    {% endfor %}
+    <!-- TESTE -->
+    <!-- <div>
+        <p>{{ db_board }}</p>
+    </div> -->
+    <!-- TESTE -->
+    {% if db_board %}
+        {% for boards in db_board %}
+            <li class="mb-3 nav-item">    
+                <div class="mb-3 d-flex align-items-center justify-content-center">
+                    <ul class="list-group list-group-horizontal">
+                        {% if boards['status'] == True %}
+                            <li class="list-group-item list-group-item-success">Ativada</li>
+                        {% else %}
+                            <li class="list-group-item list-group-item-danger">Desativada</li>
+                        {% endif %}
+                        <li class="list-group-item">{{ boards['name'] }}</li>
+                        <li class="list-group-item">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-dark">
+                                    <input type="radio" name="options" id="detalhes">Detalhes
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" name="options" id="excluir">Excluir
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        {% endfor %}
+    {% else %}
+    <div class="shadow-md align-items-center justify-content-center" style="padding: 5px 20px 5px 20px; margin-left: 250px; margin-right: 250px; border: 1px solid grey; border-radius: 20px;">
+        <div class="mb-3 d-flex align-items-center justify-content-center">
+            <h2>Que pena! :(</h2>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <h3>Sem placas adicionadas!</h3>
+        </div>
+    </div>
+    {% endif %}
     </ul>
 </div>
 <div class="d-flex align-items-center justify-content-center">

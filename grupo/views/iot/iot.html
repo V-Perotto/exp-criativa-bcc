@@ -12,7 +12,7 @@
 <div class="d-flex align-items-center justify-content-center">
     <ul class="no-dots">
         <li class="mb-3">
-            <a class="btn btn-outline-success" href="/IoT/register_boards">
+            <a class="btn btn-outline-success" href="/IoT/AddBoard">
                 <i class="fas fa-plus"></i>
                 Registrar Placas
             </a>
@@ -25,6 +25,7 @@
         </li>
     </ul>
 </div>
+{% if db_board %}
 <div class="m-4 d-flex align-items-center justify-content-center">
     <h2>
         Sensores
@@ -33,7 +34,7 @@
 <div class="d-flex align-items-center justify-content-center">
     <ul class="no-dots">
         <li class="mb-3 align-items-center justify-content-center">
-            <a class="btn btn-outline-success" href="/IoT/register_sensors">
+            <a class="btn btn-outline-success" href="/IoT/AddSensor">
                 <i class="fas fa-plus"></i>
                 Registrar Sensores
             </a>
@@ -46,4 +47,5 @@
         </li>
     </ul>
 </div>
+{% endif %}
 {% endblock %}

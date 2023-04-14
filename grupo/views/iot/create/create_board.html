@@ -1,3 +1,20 @@
 {% block create_board %}
-
+<div class="mb-4 d-flex align-items-center justify-content-center">
+    <h2>Adicionar uma Placa</h2>
+</div> 
+<div class="card d-flex align-items-center justify-content-center" style="margin-right: 38rem; margin-left: 38rem; padding-top: 2rem;">
+    <div id="form" class="mb-1 d-flex align-items-center justify-content-center">
+        <form action="/IoT/create_board" method="POST">
+            <p class="mb-3">
+                <input class="form-control" type="text" id="idName" name="name" placeholder="Nome para a placa">
+            </p>  
+            <p class="mb-4 d-flex align-items-center justify-content-center">
+                <a class="btn btn-success" type="submit" href="/IoT/BoardsList">
+                    <i class="fas fa-plus-circle"></i>
+                    Adicionar        
+                </a>
+            </p>
+        </form>
+    </div>
+</div>
 {% endblock %}

@@ -1,3 +1,32 @@
 {% block create_sensor %}
-
+<div class="mb-4 d-flex align-items-center justify-content-center">
+    <h2>Adicionar um Sensor</h2>
+</div> 
+<div class="card d-flex align-items-center justify-content-center" style="margin-right: 38rem; margin-left: 38rem; padding-top: 2rem;">
+    <div id="form" class="mb-1 d-flex align-items-center justify-content-center">
+        <form action="/IoT/create_sensor" method="POST">
+            <p class="mb-3">
+                <input class="form-control" type="text" id="idName" name="name" placeholder="Nome para o sensor">
+            </p>  
+            <p class="mb-3">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Placas
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for boards in db_board %}
+                        <a class="dropdown-item" href="#" id="idName" name="name">{{ boards }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </p>
+            <p class="mb-4 d-flex align-items-center justify-content-center">
+                <a class="btn btn-success" type="submit" href="/IoT/">
+                    <i class="fas fa-plus-circle"></i>
+                    Adicionar
+                </a>
+            </p>
+        </form>
+    </div>
+</div>
 {% endblock %}

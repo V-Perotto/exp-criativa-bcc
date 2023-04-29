@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {% if user['is_admin'] %}
+        <title>Admin - Adicionar Placa</title>
+        {% else %}
+        <title>Adicionar Placa</title>
+        {% endif %}
+        {% include "content/link.html" %}
+    </head>
+    <body>
+        {% include "content/header.html" %} 
+        {% include "iot/create/create_board.html" %}
+    </body>
+    {% include "content/scripts.html" %}
+</html>

@@ -1,0 +1,20 @@
+{% extends "admin/admin_base.html" %}
+{% block view %}
+<main>
+    <body style="margin: 20px 20px 20px 20px">
+        <div class="mb-5 d-flex align-items-center justify-content-center">
+            <h2>Formas de Pagamento Cadastradas</h2>
+        </div>
+        <div class="mb-5 d-flex align-items-center justify-content-center">
+            <ul>
+            {% for forms in billing_forms %}
+                <li>
+                    <p>{{ forms.value }}</p>    
+                    <p>{{ forms.billing_date }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </body>
+</main>
+{% endblock view %}

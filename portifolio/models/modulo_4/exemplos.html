@@ -1,0 +1,133 @@
+{% block ex01 %}
+<div class="resume-section-content">
+    <h2 class="mb-0">7 Exemplos</h2>
+    <div class="subheading mb-3">Módulo 4 e 5</div>
+    <div>
+        <div>
+            <div class="mb-3">1. Arquivo <code>db.py</code>.</div>
+            <img class="mb-3" width="40%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex01.png') }}" />    
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi baixado e importado o <code>SQLAlchemy</code>.
+                </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi feita uma instância do <code>SQLAlchemy</code> para poder realizar uma conexão com o banco de dados.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">2. Arquivo <code>app_controller.py</code>.</div>
+            <img class="mb-3"  width="45%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex02.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi criada uma função <code>create_app()</code> que cria a aplicação Flask com a instância do SQLAlchemy na configuração da aplicação.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">3. Arquivo <code>device.py</code>.</div>
+            <img class="mb-3"  width="40%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex03.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi criada uma classe de <code>Device</code>, nela estão sendo adicionadas variáveis necessárias para o <code>Device</code>.
+                </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Essas variáveis serão utilizadas para popular as colunas referente à tabela nomeada na variável <code>__tablename__</code>.
+                </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi criado o relacionamento da tabela de <code>devices</code> com a de <code>Sensor</code> e <code>Actuators</code>.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">4. Arquivo <code>sensor.py</code>.</div>
+            <img class="mb-3"  width="40%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex04.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Mesma situação que o <code>Device</code>, está sendo criada as colunas dos valores de <code>sensor</code>.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">5. Arquivo <code>sensor.py</code>, função <code>save_sensor_alt()</code>.</div>
+            <img class="mb-3"  width="55%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex05.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi criada uma função para salvar os dados na tabela e nas colunas criadas anteriormente, sendo instanciado a classe <code>Device</code> e <code>Sensor</code>.
+                </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi adicionado o <code>Sensor</code> na coluna de sensores da tabela de <code>Devices</code>.
+                </li>
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Foi adicionado os valores ao banco na etapa de <code>db.session.</code> na coluna de sensores da tabela de <code>Devices</code>.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">6. Arquivo <code>sensor.py</code>, função <code>get_sensors()</code>.</div>
+            <img class="mb-3"  width="45%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex06.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Realiza uma busca pelo <code>id</code> trazendo as colunas.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">7. Arquivo <code>create_db.py</code>, função <code>create_db()</code>.</div>
+            <img class="mb-3"  width="20%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex07.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Cria a uma função que inicializa o banco de dados.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">8. Arquivo <code>create_db.py</code>, função <code>create_db()</code>.</div>
+            <img class="mb-3"  width="70%" src="{{ url_for('static', filename='assets/img/modulo04/ex/ex08.png') }}" />
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Cria métodos em expressão <code>python</code> para reutilizar códigos em <code>HTML</code>, diminuindo a reescrita de código.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <ul class="fa-ul mb-0 list-inline d-flex flex-column flex-md-row justify-content-between mb-5">
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#modulo_4">
+                    <span class="fa-li"><i class="fas fa-angle-up"></i></span>
+                    Voltar
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#um_exemplo02">
+                    Próximo
+                    <span class="fa-li"><i class="fas fa-angle-down"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

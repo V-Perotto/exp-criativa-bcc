@@ -1,0 +1,27 @@
+{% extends "/iot/iot_index.html" %}
+{% import "/utils/macros.html" as forms %}
+{% block content %}
+<div class="vertical-center">
+    <div class="container forms shadow-sm p-3 mb-5 bg-white border border-secondary rounded">
+        <form action="/iot/save_sensor" method="POST" class="row g-3 justify-content-center">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="col-md-12 notification is-danger">
+                    {{ messages[0] }}
+                </div>
+                {% endif %}
+            {% endwith %}
+            {{ forms.input(label="Nome", name="name", id="name", box_size=3) }}
+            {{ forms.input(label="Modelo", name="model", id="model", box_size=3) }}
+            {{ forms.input(label="Marca", name="brand", id="brand", box_size=3) }}
+            {{ forms.input(label="Tensão", name="voltage", id="voltage", box_size=1) }}
+            {{ forms.input(label="Unidade de Medida", name="measure", id="measure", box_size=2) }}
+            {{ forms.textarea(label="Descrição", name="description", id="description") }}
+            {{ forms.checkbox(label="Está ativo?", name="is_active", id="is_active") }}
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Cadastrar Sensor</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

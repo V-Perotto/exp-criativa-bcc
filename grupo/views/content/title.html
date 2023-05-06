@@ -1,0 +1,8 @@
+<!-- title -->
+{% block title %}
+{% if not user["is_admin"] %}
+<title>Projeto em Grupo</title>
+{% else %}
+<title>Admin - Projeto em Grupo</title>
+{% endif %}
+{% endblock %}

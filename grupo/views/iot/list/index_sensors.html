@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {% if user['is_admin'] %}
+        <title>Admin - Lista de Sensores</title>
+        {% else %}
+        <title>Lista de Sensores</title>
+        {% endif %}
+        {% include "content/link.html" %}
+    </head>
+    <body>
+        {% include "content/header.html" %} 
+        {% include "iot/list/list_sensor.html" %}
+    </body>
+    {% include "content/scripts.html" %}
+</html>

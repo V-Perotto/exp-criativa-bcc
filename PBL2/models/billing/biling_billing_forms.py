@@ -16,11 +16,5 @@ class BillingBillingForms(db.Model):
         db.session.commit()
 
     def get_billing_billing_forms():
-        billing_billing_form = BillingBillingForms.query.join(
-                                                BillingBillingForms,
-                                                BillingBillingForms.id == id
-                                            ).add_columns(
-                                                BillingBillingForms.billing_id,
-                                                BillingBillingForms.billing_form_id
-                                            )
+        billing_billing_form = BillingBillingForms.query.all()
         return billing_billing_form

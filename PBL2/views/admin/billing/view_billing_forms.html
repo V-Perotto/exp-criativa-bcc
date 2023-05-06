@@ -1,20 +1,28 @@
-{% extends "admin/admin_base.html" %}
-{% block view %}
-<main>
-    <body style="margin: 20px 20px 20px 20px">
-        <div class="mb-5 d-flex align-items-center justify-content-center">
-            <h2>Formas de Pagamento Cadastradas</h2>
-        </div>
-        <div class="mb-5 d-flex align-items-center justify-content-center">
-            <ul>
-            {% for forms in billing_forms %}
-                <li>
-                    <p>{{ forms.value }}</p>    
-                    <p>{{ forms.billing_date }}</p>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-    </body>
+{% import "/utils/forms.html" as forms %} {% extends "admin/admin_base.html" %}
+{% block main %}
+<main class="p-5">
+  <h2>Cobranças</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for forms in billing_forms %}
+            <tr>
+                <th>{{forms.id}}</th>
+                <td>{{forms.name}}</td>
+                <td>{{forms.description}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            
+        </tr>
+    </tbody>
+    </table>
+    
 </main>
-{% endblock view %}
+{% endblock main %}

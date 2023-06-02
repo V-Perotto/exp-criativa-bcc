@@ -1,0 +1,92 @@
+{% block ex_iot %}
+<div class="resume-section-content">
+    <h2 class="mb-0">Exemplos</h2>
+    <div class="subheading mb-3">Módulo Iot</div>
+    <div>
+        <div>
+            <div class="mb-3">1. Crie um semáforo com 3 LEDs no Arduino.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <img class="mb-3" width="40%" src="{{ url_for('static', filename='assets/img/modulo_iot/semaforo/semaforo.png') }}" />    
+            <img class="mb-3" width="40%" src="{{ url_for('static', filename='assets/img/modulo_iot/semaforo/codigo_semaforo.png') }}" />    
+        </div>
+        <div>
+            <div class="mb-3">2. Faça o código para ler dados de temperatura e humidade do sensor DTH22.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <img class="mb-3"  width="30%" src="{{ url_for('static', filename='assets/img/modulo_iot/temperatura/temp.png') }}" />
+            <img class="mb-3"  width="45%" src="{{ url_for('static', filename='assets/img/modulo_iot/temperatura/codigo_temp.png') }}" />
+        </div>
+        <div>
+            <div class="mb-3">3. Dado do sensor de temperatura com servo motor.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <img class="mb-3"  width="30%" src="{{ url_for('static', filename='assets/img/modulo_iot/servo_motor.jpeg') }}" />
+            <img class="mb-3"  width="60%" src="{{ url_for('static', filename='assets/img/modulo_iot/codigo_servo_dht.png') }}" />
+        </div>
+        <div>
+            <div class="mb-3">4. nodeMU e servidor de bate papo.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <img class="mb-3"  width="55%" src="{{ url_for('static', filename='assets/img/modulo_iot/nodemcu/codigo_nodemcu.png') }}" />
+        </div>
+        <div>
+            <div class="mb-3">5. ESP32 e MQTT.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Módulo que envia:
+                </li>
+                <br>
+                <li>
+                    <img class="mb-3"  width="35%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/envia/envia_mqtt_1-3.png') }}" />
+                </li>
+                <li>
+                    <img class="mb-3"  width="85%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/envia/envia_mqtt_2-3.png') }}" />
+                </li>
+                <li>
+                    <img class="mb-3"  width="85%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/envia/envia_mqtt_3-3.png') }}" />
+                </li>
+            </ul>
+            <ul class="fa-ul mb-4">
+                <li>
+                    <span class="fa-li"><i class="fas fa-code"></i></span>
+                    Módulo que recebe:
+                </li>
+                <br>
+                <li>
+                    <img class="mb-3"  width="35%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/recebe/recebeMQTT_1-4.png') }}" />
+                </li>
+                <li>
+                    <img class="mb-3"  width="80%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/recebe/recebeMQTT_2-4.png') }}" />
+                </li>
+                <li>
+                    <img class="mb-3"  width="85%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/recebe/recebeMQTT_3-4.png') }}" />
+                </li>
+                <li>
+                    <img class="mb-3"  width="85%" src="{{ url_for('static', filename='assets/img/modulo_iot/mqtt/recebe/recebeMQTT_4-4.png') }}" />
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="mb-3">6. Python com conexão ao ESP32.</div>
+            <div class="subheading mb-3">O que foi feito?</div>
+            <img class="mb-3"  width="45%" src="{{ url_for('static', filename='assets/img/modulo_iot/python_led/codigo_py_led.png') }}" />
+        </div>
+    </div>
+    <hr>
+    <div>
+        <ul class="fa-ul mb-0 list-inline d-flex flex-column flex-md-row justify-content-between mb-5">
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#modulo_4">
+                    <span class="fa-li"><i class="fas fa-angle-up"></i></span>
+                    Voltar
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="a-link-example a-link" href="#ex_iot">
+                    Próximo
+                    <span class="fa-li"><i class="fas fa-angle-down"></i></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

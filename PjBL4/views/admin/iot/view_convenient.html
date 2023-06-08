@@ -1,0 +1,54 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><a href="/admin/">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/iot/">Iot</a></li>
+                        <li class="breadcrumb-item active">Lista de Sensores por Cômodo</li>
+                    </ol>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="view_sensors" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Modelo</th>
+                                        <th>Marca</th>
+                                        <th>Cômodo</th>
+                                        <th>Unidade de Medida</th>
+                                        <th>Descrição</th>
+                                        <th>Status</th>
+                                        <th>Atualizar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for convenient in convenients %}
+                                    <tr>
+                                        <td>{{ convenient.name }}</td>
+                                        <td>{{ convenient.brand }}</td>
+                                        <td>{{ convenient.model }}</td>
+                                        <td>{{ convenient.convenient }}</td>
+                                        <td>{{ convenient.measure }}</td>
+                                        <td>{{ convenient.description }}</td>
+                                        {% if convenient.is_active == true %}
+                                        <td>Ativo</td>
+                                        {% else %}
+                                        <td>Desativado</td>
+                                        {% endif %}
+                                        <td><a href="#">Editar</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

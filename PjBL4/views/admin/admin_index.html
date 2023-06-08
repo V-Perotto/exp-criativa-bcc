@@ -1,0 +1,78 @@
+<!-- index.html -->
+{% extends "admin/admin_base.html" %}
+{% block main %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Página Inicial</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Home - Dashboard</li>
+        </ol>
+
+        <!-- <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Cadastrar Usuário</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">Cadastrar</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body">Cadastrar Pedido</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">Registrar</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Deletar Usuário</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/admin/payment/">Deletar</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Usuários cadastrados
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>E-mail</th>
+                            <th>Role</th>
+                            <th>Create at</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Username</th>
+                            <th>E-mail</th>
+                            <th>Role</th>
+                            <th>Create at</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <!-- Inserir uma função para listar os usuários -->
+                        <tr>
+                            <td>normal</td>
+                            <td>normal@alert.com</td>
+                            <td>Normal User</td>
+                            <td>2011/04/25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock main %}

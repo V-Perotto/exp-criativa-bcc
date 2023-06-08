@@ -1,0 +1,47 @@
+{% extends "iot/iot_index.html" %}
+{% import 'utils/forms.html' as forms %}
+
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                <h3 class="mt-4">Cadastro de Atuador</h3>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/iot/">Iot</a></li>
+                    <li class="breadcrumb-item active">Cadastro de Atuador</li>
+                </ol>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="vertical-center">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Cadastrar Novo Atuador
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/iot/save_actuator" method="POST">
+                                            {{ forms.input(label="Nome", name="name", id="name", type='text', box_size = 6) }}
+                                            {{ forms.input(label="Modelo", name="model", id="model", type='text', box_size = 3) }}
+                                            {{ forms.input(label="Marca", name="brand", id="brand",  type='text', box_size = 3) }}
+                                            {{ forms.input(label="Cômodo", name="convenient", id="convenient", type='text', box_size = 2) }}
+                                            {{ forms.input(label="Tipo", name="type", id="type", type='text', box_size = 2) }}
+                                            {{ forms.textarea(label="Informações Adicionais", name="description", id="description", rows = 1,  box_size = 8) }}
+                                            {{ forms.checkbox(label="Atuador ativo", name="is_active", id="is_active") }}
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Cadastrar Atuador</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "iot/iot_index.html" %}
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"><a href="/admin/">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="/admin/iot/">Iot</a></li>
+                        <li class="breadcrumb-item active">Lista de Atuadores</li>
+                    </ol>
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="view_actuators" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nome</th>
+                                        <th>Modelo</th>
+                                        <th>Marca</th>
+                                        <th>Cômodo</th>
+                                        <th>Descrição</th>
+                                        <th>Tipo</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for actuator in actuators %}
+                                        <tr>
+                                            <td>{{ actuator.id }}</td>
+                                            <td>{{ actuator.name }}</td>
+                                            <td>{{ actuator.model }}</td>
+                                            <td>{{ actuator.brand }}</td>
+                                            <td>{{ actuator.convenient }}</td>
+                                            <td>{{ actuator.description }}</td>
+                                            <td>{{ actuator.type }}</td>
+                                            {% if actuator.is_active == true%} <td>Ativo</td>
+                                            {% else %} <td>Inativo</td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

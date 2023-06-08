@@ -1,0 +1,41 @@
+{% extends "billing/billing_index.html" %}
+{% import 'utils/forms.html' as forms %}
+
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                <h3 class="mt-4">Cadastro de Cobrança</h3>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/billing/">Cobrança</a></li>
+                    <li class="breadcrumb-item active">Cadastro de Cobrança</li>
+                </ol>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="vertical-center">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Cadastrar Novo Cobrança
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/billing/save_bilings" method="POST">
+                                            {{ forms.input(label = 'Valor', name = 'value', id = 'value', type='text', box_size = 6) }}
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-primary">Cadastrar Cobrança</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

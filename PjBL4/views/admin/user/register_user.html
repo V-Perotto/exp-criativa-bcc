@@ -1,4 +1,4 @@
-{% extends "billing/billing_index.html" %}
+{% extends "user/user_index.html" %}
 {% import 'utils/forms.html' as forms %}
 
 {% block main %}
@@ -7,11 +7,11 @@
         <div class="container view">
             <div class="justify-content-center">
                 <div class="container-fluid px-4">
-                <h3 class="mt-4">Cadastro de Cobrança</h3>
+                <h3 class="mt-4">Cadastro de Usuário</h3>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="/admin/billing/">Cobrança</a></li>
-                    <li class="breadcrumb-item active">Cadastro de Cobrança</li>
+                    <li class="breadcrumb-item"><a href="/admin/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/user/">Usuário</a></li>
+                    <li class="breadcrumb-item active">Cadastro de Usuário</li>
                 </ol>
                 <div class="container-fluid px-4">
                     <div class="row">
@@ -19,13 +19,16 @@
                             <div class="container">
                                 <div class="card">
                                     <div class="card-header">
-                                    Cadastrar Novo Cobrança
+                                    Cadastrar novo usuário
                                     </div>
                                     <div class="card-body">
-                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/billing/save_bilings" method="POST">
-                                            {{ forms.input(label = 'Valor', name = 'value', id = 'value', type='text', box_size = 6) }}
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary">Cadastrar Cobrança</button>
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/user/save_user" method="POST">
+                                            {{ forms.input(label = 'E-mail', name = 'input_email', id = 'input_email', type='email', box_size = 12) }}
+                                            {{ forms.input(label = 'Username', name = 'input_username', id = 'input_username', type='text', box_size = 12) }}
+                                            {{ forms.input(label = 'Senha', name = 'input_pwd', id = 'input_pwd', type='password', box_size = 12) }}
+                                            {{ forms.checkbox(label = 'Administrador', name = 'checkbox_is_admin', id = 'checkbox_is_admin', box_size = 12) }}
+                                            <div class="col-2">
+                                                <button type="submit" class="btn btn-success">Cadastrar Usuário</button>
                                             </div>
                                         </form>
                                     </div>

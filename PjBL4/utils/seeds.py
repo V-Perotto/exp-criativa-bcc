@@ -37,4 +37,6 @@ def generate_seeds(db:SQLAlchemy):
     data["is_active"] = False
     data["measure"] = "Measure Teste"
     Sensor.update_sensor(data)
+
+    
     

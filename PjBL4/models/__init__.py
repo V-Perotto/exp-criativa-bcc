@@ -8,3 +8,4 @@ from models.iot.convenient import Convenient
 from models.iot.actuator import Actuator
 from models.iot.activation import Activation
 from models.iot.read import Read
+from models.iot.mqtt import MQTT

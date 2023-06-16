@@ -1,20 +1,19 @@
 import paho.mqtt.client as mqtt
+from models import Read, User, Sensor
 
-mqtt_broker = "broker.hivemq.com"
-mqtt_port = 1883
-mqtt_topic = "/pjbl3/leitura"
+class MQTT:
 
-class MQTT():
-
-    # def MQTT(self):
-    #     self.broker = broker
+    def __init__(self):
+        self.broker = "broker.hivemq.com"
+        self.port = 1883
+        self.topic = "/pjbl3/leitura"
 
     def on_connect(self, client, userdata, flags, rc):
         print("Conectado ao broker MQTT.")
-        client.subscribe(mqtt_topic)
+        client.subscribe(self.topic)
 
     def on_message(self, client, userdata, msg):
-        if msg.topic == mqtt_topic:
+        if msg.topic == self.topic:
             data = msg.payload.decode("utf-8")
             self.humidity, self.temperature = data.split(",")
 
@@ -25,11 +24,23 @@ class MQTT():
             if self.humidity > 20 and self.temperature > 50:
                 client.publish("/pjbl3/buzzer", "1")
 
+    # def save_reads(self):
+    #     sensors = Sensor.get_sensors()
+    #     users = User.get_user()        
+
+    #     Read.save_read(user_id=users[0].id, 
+    #                 sensor_id=sensors[0].id, 
+    #                 umid=self.humidity,
+    #                 temp=self.temperature)
+    
     def run(self):
         client = mqtt.Client()
         client.on_connect = self.on_connect
         client.on_message = self.on_message
 
-        client.connect(mqtt_broker, mqtt_port, 60)
+        client.connect(self.broker, self.port, 60)
+
+        # self.save_reads()
 
         client.loop_forever()
+

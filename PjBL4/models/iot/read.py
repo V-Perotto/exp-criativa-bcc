@@ -6,13 +6,15 @@ class Read(db.Model):
     id = db.Column("id", db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey(User.id))
     sensor_id = db.Column(db.Integer(), db.ForeignKey(Sensor.id))
-    value = db.Column(db.Float())
+    temp = db.Column(db.Float())
+    umid = db.Column(db.Float())
     read_datetime = db.Column(db.DateTime(), nullable=False, default=datetime.now())
 
-    def save_read(user_id, sensor_id, value):
+    def save_read(user_id, sensor_id, temp, umid):
         read = Read(user_id=user_id,
                     sensor_id=sensor_id,
-                    value=value)
+                    temp=temp, 
+                    umid=umid)
         
         db.session.add(read)
         db.session.commit()

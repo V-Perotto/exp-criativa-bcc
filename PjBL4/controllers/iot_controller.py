@@ -61,3 +61,20 @@ def save_actuator():
 def iot_view_convenient():
     convenients = Sensor.get_convenient()
     return render_template("/iot/view_convenient.html", convenients=convenients)
+
+@iot.route("/activate_device", methods = ['POST', 'GET'])
+def activate_device():
+    data = request.form.get("is_active", None)
+    data['is_active'] = True
+    Convenient.update_convenient(data)
+    return redirect(url_for("admin.iot.view_sensors"))
+
+@iot.route("/deactivate_device", methods = ['POST', 'GET'])
+def power_button():
+    data = request.form.get("is_active", None)
+    if data:
+        data['is_active'] = False
+    else:
+        data['is_active'] = True
+    Sensor.update_sensor_power(data)
+    return redirect(url_for("admin.iot.view_sensors"))

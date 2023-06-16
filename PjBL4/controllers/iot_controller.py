@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for, request
-from models import Sensor, Actuator, Convenient
+from models import MQTT, Read, Sensor, Actuator, Convenient
 
 iot = Blueprint("iot", __name__, template_folder='./views/admin/', static_folder='./static/', root_path="./")
 
@@ -11,6 +11,14 @@ def iot_index():
 @iot.route("/register_sensor")
 def register_sensor():
     return render_template("/iot/register_sensor.html")
+
+@iot.route("/subscribe_mqtt")
+def subscribe_mqtt():
+    [humidity, temperature] = MQTT.run()
+    # Read.save_read(user_id=user_id, 
+    #                sensor_id=sensor_id, 
+    #                value=value)
+    return True
 
 @iot.route("/view_sensors")
 def view_sensors():

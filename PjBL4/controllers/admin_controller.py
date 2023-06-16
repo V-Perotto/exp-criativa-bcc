@@ -13,14 +13,13 @@ admin.register_blueprint(iot, url_prefix='/iot')
 
 @admin.route("/")
 @admin.route("/admin")
-#@login_required
+# @login_required
 def admin_index():
-    """
-    if not current_user.is_authenticated:
-        return redirect(url_for("auth.login"))
-    else:
-        return render_template("admin/admin_base.html", name = current_user.name)
-    """
+    # if not current_user.is_authenticated:
+    #     return redirect(url_for("auth.login"))
+    # else:
+    #     return render_template("admin/admin_base.html", name = current_user.name)
+    
     return render_template("admin/admin_index.html")
     
     

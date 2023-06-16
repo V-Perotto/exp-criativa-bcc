@@ -22,10 +22,10 @@
                                         <th>Unidade de Medida</th>
                                         <th>Descrição</th>
                                         <th>Status</th>
-                                        <th>Atualizar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <form action="">
                                     {% for sensor in sensors %}
                                     <tr>
                                         <td>{{ sensor.name }}</td>
@@ -35,13 +35,13 @@
                                         <td>{{ sensor.measure }}</td>
                                         <td>{{ sensor.description }}</td>
                                         {% if sensor.is_active == true %}
-                                        <td>Ativo</td>
+                                        <td id="is_active"><a href="/admin/iot/power_button/">Ativo</a></td>
                                         {% else %}
-                                        <td>Desativado</td>
+                                        <td id="is_active"><a href="/admin/iot/power_button/">Desativado</a></td>
                                         {% endif %}
-                                        <td><a href="/admin/iot/update_sensor/{{ sensor.id }}">Editar</a></td>
                                     </tr>
                                     {% endfor %}
+                                    </form>
                                 </tbody>
                             </table>
                         </div>

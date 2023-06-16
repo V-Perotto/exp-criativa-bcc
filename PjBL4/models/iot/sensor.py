@@ -18,7 +18,6 @@ class Sensor(db.Model):
         sensors = Sensor.query.join(Device, Device.id == Sensor.id)\
                     .add_columns(Sensor.id, Device.name, Device.brand, Device.model, 
                                  Device.convenient, Device.description,  Device.is_active, Sensor.measure).all()
-        
         return sensors
     
     def save_sensor(name, brand, model, description, convenient, is_active, measure):
@@ -48,4 +47,14 @@ class Sensor(db.Model):
         
         Sensor.query.filter_by(id=data['id'])\
                         .update(dict(measure = data['measure']))
+        db.session.commit()
+
+    def update_sensor_power(data):
+        Device.query.filter_by(id=data['id'])\
+                .update(dict(name = data['name'], brand=data['brand'], model = data['model'], 
+                        voltage = data['voltage'], description = data['description'], 
+                        is_active = data['is_active']))
+        
+        Sensor.query.filter_by(id=data['id'])\
+                        .update(dict(is_active = data['is_active']))
         db.session.commit()
